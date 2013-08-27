@@ -2,4 +2,8 @@
 
     <string name="app_name">AndroidUtilities</string>
 
+    <string name="success">Success</string>
+    <string name="error">Error</string>
+    <string name="ok">Ok</string>
+    
 </resources>
