@@ -6,4 +6,6 @@
     <string name="error">Error</string>
     <string name="ok">Ok</string>
     
+    <string name="cancel">Cancel</string>
+    
 </resources>
