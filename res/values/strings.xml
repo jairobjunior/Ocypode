@@ -8,4 +8,6 @@
     
     <string name="cancel">Cancel</string>
     
+    <string name="loading">Loading&#8230;&#8230;&#8230;</string>
+    
 </resources>

@@ -1,8 +1,10 @@
-package com.sook.android.activity;
+package com.sook.android.activity.robo;
 
 import roboguice.activity.RoboActivity;
+import android.content.Intent;
 import android.os.Bundle;
 
+import com.sook.android.activity.IResultCallbackActivity;
 import com.sook.android.component.IStartActivityDelegate;
 import com.sook.android.component.StartActivityDelegate;
 
@@ -52,6 +54,24 @@ abstract public class AbstractRoboActivity extends RoboActivity implements IStar
 	@Override
 	public void goToActivity(String action) {
 		mStartActivityDelegate.goToActivity(action);
+	}
+	
+	@Override
+	public void openBrowser(String url) {
+		mStartActivityDelegate.openBrowser(url);
+	}
+	
+	@Override
+	public void launchSubActivity(Class<?> subActivityClass,
+			IResultCallbackActivity callback) {
+		mStartActivityDelegate.launchSubActivity(subActivityClass, callback);
+	}
+	
+	@Override
+	public void onActivityResult(int requestCode, int resultCode, Intent data) {
+		super.onActivityResult(requestCode, resultCode, data);
+		
+		mStartActivityDelegate.onActivityResult(requestCode, resultCode, data);
 	}
 
 }

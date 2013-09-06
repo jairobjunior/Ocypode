@@ -1,10 +1,12 @@
-package com.sook.android.activity.fragment;
+package com.sook.android.activity.robo.fragment;
 
 import roboguice.fragment.RoboFragment;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 
+import com.sook.android.activity.IResultCallbackActivity;
 import com.sook.android.component.IStartActivityDelegate;
 import com.sook.android.component.StartActivityDelegate;
 
@@ -59,6 +61,24 @@ abstract public class AbstractRoboFragment extends RoboFragment implements IStar
 	protected void addFragment(int fragmentId, Fragment fragment) {
 		FragmentTransaction transaction = getChildFragmentManager().beginTransaction();		
 		transaction.replace(fragmentId, fragment).commit();
+	}
+	
+	@Override
+	public void openBrowser(String url) {
+		mStartActivityDelegate.openBrowser(url);
+	}
+	
+	@Override
+	public void launchSubActivity(Class<?> subActivityClass,
+			IResultCallbackActivity callback) {
+		mStartActivityDelegate.launchSubActivity(subActivityClass, callback);
+	}
+	
+	@Override
+	public void onActivityResult(int requestCode, int resultCode, Intent data) {
+		super.onActivityResult(requestCode, resultCode, data);
+		
+		mStartActivityDelegate.onActivityResult(requestCode, resultCode, data);
 	}
 
 }

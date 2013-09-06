@@ -1,5 +1,8 @@
 package com.sook.android.component;
 
+import com.sook.android.activity.IResultCallbackActivity;
+
+import android.content.Intent;
 import android.os.Bundle;
 
 /**
@@ -22,4 +25,10 @@ public interface IStartActivityDelegate {
 
 	void goToActivityWithNoAnimation(Class<?> screen, Bundle extras);
 
+	void openBrowser(String url);
+
+	void launchSubActivity(Class<?> subActivityClass,
+			IResultCallbackActivity callback);
+
+	void onActivityResult(int requestCode, int resultCode, Intent data);
 }

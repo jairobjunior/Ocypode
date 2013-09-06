@@ -29,6 +29,10 @@ public class AlertDialogBuilder {
 		createAlertDialog(mActivity.getString(R.string.error), message).show();
 	}
 	
+	public void showErrorMessage(int messageId) {
+		showErrorMessage(mActivity.getString(messageId));
+	}
+	
 	private AlertDialog createAlertDialog(String title, String message) {
         AlertDialog.Builder builder = new AlertDialog.Builder(mActivity);
         builder.setMessage(message)
