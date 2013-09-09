@@ -2,7 +2,6 @@ package com.sook.android.activity.robo;
 
 import roboguice.activity.RoboFragmentActivity;
 import android.app.Service;
-import android.content.Context;
 import android.content.Intent;
 import android.content.ServiceConnection;
 import android.os.Bundle;
@@ -10,7 +9,6 @@ import android.os.Bundle;
 import com.sook.android.activity.IResultCallbackActivity;
 import com.sook.android.component.IStartActivityDelegate;
 import com.sook.android.component.StartActivityDelegate;
-import com.sook.android.utility.Logcat;
 
 abstract public class AbstractRoboFragmentActivity extends RoboFragmentActivity implements IStartActivityDelegate {
 
@@ -61,25 +59,6 @@ abstract public class AbstractRoboFragmentActivity extends RoboFragmentActivity 
 		mStartActivityDelegate.goToActivity(action);
 	}
 
-	protected void startService(Class<?> cl) {
-		Intent i = new Intent(this, cl);
-		startService(i);
-	}
-
-	protected void stopService(Class<?> cl) {
-		Intent i = new Intent(this, cl);
-		stopService(i);
-	}
-	
-	public void bindService(Service service, Class<?> serviceClass,
-			ServiceConnection serviceConnection) {
-		if (service == null) {
-			Logcat.d("Binding Service: " + serviceClass.getName());
-			bindService(new Intent(this, serviceClass), serviceConnection,
-					Context.BIND_AUTO_CREATE);
-		}
-	}
-
 	@Override
 	public void openBrowser(String url) {
 		mStartActivityDelegate.openBrowser(url);
@@ -96,6 +75,22 @@ abstract public class AbstractRoboFragmentActivity extends RoboFragmentActivity 
 		super.onActivityResult(requestCode, resultCode, data);
 		
 		mStartActivityDelegate.onActivityResult(requestCode, resultCode, data);
+	}
+	
+	@Override
+	public void startService(Class<?> cl) {
+		mStartActivityDelegate.startService(cl);
+	}
+	
+	@Override
+	public void stopService(Class<?> cl) {
+		mStartActivityDelegate.stopService(cl);
+	}
+	
+	@Override
+	public void bindService(Service service, Class<?> serviceClass,
+			ServiceConnection serviceConnection) {
+		mStartActivityDelegate.bindService(service, serviceClass, serviceConnection);
 	}
 
 	public void hideActionBar() {

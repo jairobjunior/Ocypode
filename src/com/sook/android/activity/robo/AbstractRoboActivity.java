@@ -1,7 +1,9 @@
 package com.sook.android.activity.robo;
 
 import roboguice.activity.RoboActivity;
+import android.app.Service;
 import android.content.Intent;
+import android.content.ServiceConnection;
 import android.os.Bundle;
 
 import com.sook.android.activity.IResultCallbackActivity;
@@ -72,6 +74,22 @@ abstract public class AbstractRoboActivity extends RoboActivity implements IStar
 		super.onActivityResult(requestCode, resultCode, data);
 		
 		mStartActivityDelegate.onActivityResult(requestCode, resultCode, data);
+	}
+	
+	@Override
+	public void startService(Class<?> cl) {
+		mStartActivityDelegate.startService(cl);
+	}
+	
+	@Override
+	public void stopService(Class<?> cl) {
+		mStartActivityDelegate.stopService(cl);
+	}
+	
+	@Override
+	public void bindService(Service service, Class<?> serviceClass,
+			ServiceConnection serviceConnection) {
+		mStartActivityDelegate.bindService(service, serviceClass, serviceConnection);
 	}
 
 }

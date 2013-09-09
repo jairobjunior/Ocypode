@@ -1,9 +1,11 @@
 package com.sook.android.component;
 
-import com.sook.android.activity.IResultCallbackActivity;
-
+import android.app.Service;
 import android.content.Intent;
+import android.content.ServiceConnection;
 import android.os.Bundle;
+
+import com.sook.android.activity.IResultCallbackActivity;
 
 /**
  * @author Jairo Barros Junior (jairobjunior@gmail.com)
@@ -31,4 +33,11 @@ public interface IStartActivityDelegate {
 			IResultCallbackActivity callback);
 
 	void onActivityResult(int requestCode, int resultCode, Intent data);
+	
+	void startService(Class<?> cl);
+
+	void stopService(Class<?> cl);
+	
+	void bindService(Service service, Class<?> serviceClass,
+			ServiceConnection serviceConnection);
 }

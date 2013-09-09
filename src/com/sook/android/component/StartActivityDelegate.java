@@ -3,7 +3,10 @@ package com.sook.android.component;
 import java.util.Random;
 
 import android.app.Activity;
+import android.app.Service;
+import android.content.Context;
 import android.content.Intent;
+import android.content.ServiceConnection;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.SparseArray;
@@ -108,6 +111,28 @@ public class StartActivityDelegate implements IStartActivityDelegate {
 			}
 		} catch (Exception e) {
 			Logcat.e("Problem processing result from sub-activity", e);
+		}
+	}
+
+	@Override
+	public void startService(Class<?> cl) {
+		Intent i = new Intent(mActivity, cl);
+		mActivity.startService(i);
+	}
+
+	@Override
+	public void stopService(Class<?> cl) {
+		Intent i = new Intent(mActivity, cl);
+		mActivity.stopService(i);
+	}
+
+	@Override
+	public void bindService(Service service, Class<?> serviceClass,
+			ServiceConnection serviceConnection) {
+		if (service == null) {
+			Logcat.d("Binding Service: " + serviceClass.getName());
+			mActivity.bindService(new Intent(mActivity, serviceClass), serviceConnection,
+					Context.BIND_AUTO_CREATE);
 		}
 	}
 }
