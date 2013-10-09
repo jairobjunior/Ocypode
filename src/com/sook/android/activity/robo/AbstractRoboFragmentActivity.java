@@ -7,19 +7,19 @@ import android.content.ServiceConnection;
 import android.os.Bundle;
 
 import com.sook.android.activity.IResultCallbackActivity;
-import com.sook.android.component.IStartActivityDelegate;
-import com.sook.android.component.StartActivityDelegate;
+import com.sook.android.component.delegate.IStartActivityDelegate;
+import com.sook.android.component.delegate.StartActivityDelegate;
+import com.sook.android.component.delegate.adaptor.StartActivityAdaptor;
 
 abstract public class AbstractRoboFragmentActivity extends RoboFragmentActivity implements IStartActivityDelegate {
 
 	private IStartActivityDelegate mStartActivityDelegate;
-	
 
 	@Override
 	protected void onCreate(Bundle arg0) {
-		super.onCreate(arg0);		
+		super.onCreate(arg0);
 		
-		mStartActivityDelegate = new StartActivityDelegate(this);
+		mStartActivityDelegate = new StartActivityDelegate(new StartActivityAdaptor(this));
 	}	
 	
 	@Override
@@ -68,6 +68,11 @@ abstract public class AbstractRoboFragmentActivity extends RoboFragmentActivity 
 	public void launchSubActivity(Class<?> subActivityClass,
 			IResultCallbackActivity callback) {
 		mStartActivityDelegate.launchSubActivity(subActivityClass, callback);
+	}
+	
+	@Override
+	public void launchSubActivity(Intent i, IResultCallbackActivity callback) {
+		mStartActivityDelegate.launchSubActivity(i, callback);
 	}
 	
 	@Override

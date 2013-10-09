@@ -1,4 +1,4 @@
-package com.sook.android.component;
+package com.sook.android.component.delegate;
 
 import java.util.Random;
 
@@ -12,6 +12,7 @@ import android.os.Bundle;
 import android.util.SparseArray;
 
 import com.sook.android.activity.IResultCallbackActivity;
+import com.sook.android.component.delegate.adaptor.IStartActivityAdaptor;
 import com.sook.android.utility.Logcat;
 
 /**
@@ -20,27 +21,27 @@ import com.sook.android.utility.Logcat;
  */
 public class StartActivityDelegate implements IStartActivityDelegate {
 		
-	private Activity mActivity;
+	private IStartActivityAdaptor mStartActivityAdaptor;
 	
 	protected SparseArray<IResultCallbackActivity> mCallbackMap;
 	
-	public StartActivityDelegate(Activity activity) {
-		mActivity = activity;
+	public StartActivityDelegate(IStartActivityAdaptor startActivityAdaptor) {
+		mStartActivityAdaptor = startActivityAdaptor;
 		mCallbackMap = new SparseArray<IResultCallbackActivity>();
-	}		
+	}
 
 	@Override
 	public void goToActivity(Class<?> screen) {
-		Intent intent = new Intent(mActivity, screen);
-		mActivity.startActivity(intent);
+		Intent intent = new Intent(mStartActivityAdaptor.getContext(), screen);
+		mStartActivityAdaptor.startActivity(intent);
 	}
 	
 	@Override
 	public void reorderActivityToFront(Class<?> screen, Bundle extras) {
-		Intent intent = new Intent(mActivity, screen);
+		Intent intent = new Intent(mStartActivityAdaptor.getContext(), screen);
 		intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
 		intent.putExtras(extras);
-		mActivity.startActivity(intent);
+		mStartActivityAdaptor.startActivity(intent);
 	}
 	
 	@Override
@@ -57,39 +58,44 @@ public class StartActivityDelegate implements IStartActivityDelegate {
 	public void goToActivityWithAnimation(Class<?> screen, int enterAnim,
 			int exitAnim) {
 		goToActivity(screen);
-		mActivity.overridePendingTransition(enterAnim, exitAnim);
+		mStartActivityAdaptor.overridePendingTransition(enterAnim, exitAnim);
 	}
 	
 	@Override
 	public void goToActivityWithAnimation(Class<?> screen, Bundle extras,
 			int enterAnim, int exitAnim) {
-		Intent intent = new Intent(mActivity, screen);
+		Intent intent = new Intent(mStartActivityAdaptor.getContext(), screen);
 		intent.putExtras(extras);
-		mActivity.startActivity(intent);
-		mActivity.overridePendingTransition(enterAnim, exitAnim);
+		mStartActivityAdaptor.startActivity(intent);
+		mStartActivityAdaptor.overridePendingTransition(enterAnim, exitAnim);
 	}
 	
 	@Override
 	public void goToActivity(String action) {
 		Intent intent = new Intent(action);
-		mActivity.startActivity(intent);
+		mStartActivityAdaptor.startActivity(intent);
 	}
 
 	@Override
 	public void openBrowser(String url) {
 		Intent browserIntent = new Intent(Intent.ACTION_VIEW,
 				Uri.parse(url));
-		mActivity.startActivity(browserIntent);		
+		mStartActivityAdaptor.startActivity(browserIntent);		
 	}
 	
 	@Override
 	public void launchSubActivity(Class<?> subActivityClass, IResultCallbackActivity callback) {
-		Intent i = new Intent(mActivity, subActivityClass);
-
+		Intent i = new Intent(mStartActivityAdaptor.getContext(), subActivityClass);
+		
+		launchSubActivity(i, callback);
+	}
+	
+	@Override
+	public void launchSubActivity(Intent i, IResultCallbackActivity callback) {
 		int correlationId = new Random().nextInt(9999);
 
 		mCallbackMap.put(correlationId, callback);
-		mActivity.startActivityForResult(i, correlationId);
+		mStartActivityAdaptor.startActivityForResult(i, correlationId);
 	}
 	
 	@Override
@@ -116,14 +122,14 @@ public class StartActivityDelegate implements IStartActivityDelegate {
 
 	@Override
 	public void startService(Class<?> cl) {
-		Intent i = new Intent(mActivity, cl);
-		mActivity.startService(i);
+		Intent i = new Intent(mStartActivityAdaptor.getContext(), cl);
+		mStartActivityAdaptor.startService(i);
 	}
 
 	@Override
 	public void stopService(Class<?> cl) {
-		Intent i = new Intent(mActivity, cl);
-		mActivity.stopService(i);
+		Intent i = new Intent(mStartActivityAdaptor.getContext(), cl);
+		mStartActivityAdaptor.stopService(i);
 	}
 
 	@Override
@@ -131,7 +137,7 @@ public class StartActivityDelegate implements IStartActivityDelegate {
 			ServiceConnection serviceConnection) {
 		if (service == null) {
 			Logcat.d("Binding Service: " + serviceClass.getName());
-			mActivity.bindService(new Intent(mActivity, serviceClass), serviceConnection,
+			mStartActivityAdaptor.bindService(new Intent(mStartActivityAdaptor.getContext(), serviceClass), serviceConnection,
 					Context.BIND_AUTO_CREATE);
 		}
 	}

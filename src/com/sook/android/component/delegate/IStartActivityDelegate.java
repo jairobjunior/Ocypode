@@ -1,4 +1,4 @@
-package com.sook.android.component;
+package com.sook.android.component.delegate;
 
 import android.app.Service;
 import android.content.Intent;
@@ -30,6 +30,9 @@ public interface IStartActivityDelegate {
 	void openBrowser(String url);
 
 	void launchSubActivity(Class<?> subActivityClass,
+			IResultCallbackActivity callback);
+	
+	public void launchSubActivity(Intent i, 
 			IResultCallbackActivity callback);
 
 	void onActivityResult(int requestCode, int resultCode, Intent data);

@@ -7,8 +7,9 @@ import android.content.ServiceConnection;
 import android.os.Bundle;
 
 import com.sook.android.activity.IResultCallbackActivity;
-import com.sook.android.component.IStartActivityDelegate;
-import com.sook.android.component.StartActivityDelegate;
+import com.sook.android.component.delegate.IStartActivityDelegate;
+import com.sook.android.component.delegate.StartActivityDelegate;
+import com.sook.android.component.delegate.adaptor.StartActivityAdaptor;
 
 abstract public class AbstractRoboActivity extends RoboActivity implements IStartActivityDelegate {
 		
@@ -17,8 +18,8 @@ abstract public class AbstractRoboActivity extends RoboActivity implements IStar
 	@Override
 	protected void onCreate(Bundle arg0) {
 		super.onCreate(arg0);		
-		
-		mStartActivityDelegate = new StartActivityDelegate(this);
+
+		mStartActivityDelegate = new StartActivityDelegate(new StartActivityAdaptor(this));
 	}	
 	
 	@Override
@@ -67,6 +68,11 @@ abstract public class AbstractRoboActivity extends RoboActivity implements IStar
 	public void launchSubActivity(Class<?> subActivityClass,
 			IResultCallbackActivity callback) {
 		mStartActivityDelegate.launchSubActivity(subActivityClass, callback);
+	}
+	
+	@Override
+	public void launchSubActivity(Intent i, IResultCallbackActivity callback) {
+		mStartActivityDelegate.launchSubActivity(i, callback);
 	}
 	
 	@Override
