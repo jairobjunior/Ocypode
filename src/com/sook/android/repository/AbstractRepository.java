@@ -26,5 +26,11 @@ abstract public class AbstractRepository {
 		editor.commit();
 	}
 
+	public void saveBoolean(String key, Boolean value) {
+		SharedPreferences.Editor editor = getEditor();
+		editor.putBoolean(key, value);
+		editor.commit();
+	}
+
 	abstract protected String getSharedPreferencesName();
 }
