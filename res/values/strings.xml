@@ -10,4 +10,7 @@
     
     <string name="loading">Loading&#8230;&#8230;&#8230;</string>
     
+    <string name="pm">PM</string>
+    <string name="am">AM</string>
+    
 </resources>
