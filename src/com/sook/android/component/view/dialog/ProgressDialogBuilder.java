@@ -29,6 +29,6 @@ public class ProgressDialogBuilder extends ProgressDialog {
 	private void setDefaultValues() {		
 		setTitle(null);
 		setIndeterminate(true);
-		setCancelable(false);
+		setCancelable(true);
 	}
 }
