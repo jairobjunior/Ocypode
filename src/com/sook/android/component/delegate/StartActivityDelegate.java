@@ -70,6 +70,16 @@ public class StartActivityDelegate implements IStartActivityDelegate {
 		mStartActivityAdaptor.overridePendingTransition(enterAnim, exitAnim);
 	}
 	
+
+	@Override
+	public void goToActivityWithAnimationSettingFlagClearTop(Class<?> screen,
+			int enterAnim, int exitAnim) {
+		Intent intent = new Intent(mStartActivityAdaptor.getContext(), screen);
+		intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+		mStartActivityAdaptor.startActivity(intent);
+		mStartActivityAdaptor.overridePendingTransition(enterAnim, exitAnim);
+	}
+	
 	@Override
 	public void goToActivity(String action) {
 		Intent intent = new Intent(action);
@@ -141,4 +151,5 @@ public class StartActivityDelegate implements IStartActivityDelegate {
 					Context.BIND_AUTO_CREATE);
 		}
 	}
+
 }

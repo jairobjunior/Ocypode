@@ -55,6 +55,12 @@ abstract public class AbstractRoboActivity extends RoboActivity implements IStar
 	}
 	
 	@Override
+	public void goToActivityWithAnimationSettingFlagClearTop(Class<?> screen,
+			int enterAnim, int exitAnim) {
+		mStartActivityDelegate.goToActivityWithAnimationSettingFlagClearTop(screen, enterAnim, exitAnim);
+	}
+	
+	@Override
 	public void goToActivity(String action) {
 		mStartActivityDelegate.goToActivity(action);
 	}

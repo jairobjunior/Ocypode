@@ -20,6 +20,8 @@ public interface IStartActivityDelegate {
 	void goToActivityWithAnimation(Class<?> screen, int enterAnim, int exitAnim);
 	
 	void goToActivityWithAnimation(Class<?> screen, Bundle extras, int enterAnim, int exitAnim);
+	
+	void goToActivityWithAnimationSettingFlagClearTop(Class<?> screen, int enterAnim, int exitAnim);
 
 	void goToActivity(String action);
 	
