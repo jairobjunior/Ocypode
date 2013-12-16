@@ -5,8 +5,6 @@ import java.util.Locale;
 
 public class DateFormatter {
 	
-	public static SimpleDateFormat dateUnabbreviated = new SimpleDateFormat("MMMM dd, yyyy", Locale.US);
-
 	public static CharSequence getDayWithSuffix(int day) {
 		if (day >= 1 && day <= 31) {
 			if (day >= 11 && day <= 13) {
@@ -26,5 +24,13 @@ public class DateFormatter {
 		}
 		
 		throw new IllegalArgumentException("The day of the month should be between 1 and 31.");
+	}
+	
+	public static SimpleDateFormat simpleDateFormat(String pattern){
+		try {
+			return new SimpleDateFormat(pattern, Locale.getDefault());
+		} catch (IllegalArgumentException e) {
+			throw new IllegalArgumentException("Pattern invalid date.");
+		}
 	}
 }
