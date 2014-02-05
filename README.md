@@ -1,6 +1,6 @@
 # Ocypode
 
-It is an open source project for Android platform, written in Java. Its goal is to help programmers with common functionalities needed daily in most projects. Basically, it is a result of refactoring on projects that I have worked on. This project is integrated with [RoboGuice](https://github.com/roboguice/roboguice), providing some abstraction for methods like: startActivity; overridePendingTransition and startService; There is also view components to deal with type of fonts, dialog builders, auto resize text view and create image as a circle. You can also find utility classes for currency, date and number format. There is string validation and Logcat.
+It is an open source project with a collection of libraries for iOS platform, written in Java. Its goal is to help programmers with common functionalities needed daily in most projects, making developing mobile apps easier. Basically, it is a result of refactoring on projects that I have worked on. This project is integrated with [RoboGuice](https://github.com/roboguice/roboguice), providing some abstraction for methods like: startActivity; overridePendingTransition and startService; There is also view components to deal with type of fonts, dialog builders, auto resize text view and create image as a circle. You can also find utility classes for currency, date and number format. There is string validation and Logcat.
 
 ## Installation
 
