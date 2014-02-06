@@ -6,8 +6,7 @@ It is an open source project with a collection of libraries for iOS platform, wr
 
 ### From Gradle
 
-The Gradle is the tool used to build the Ocypode library. If you are using Gradle too (the new standard build system for Android), you can add Ocypode 
- repository ('https://github.com/jairobjunior/Ocypode/raw/dev/repo') and dependency ('com.ocypode:ocypode-lib:0.1.0') to your build.gradle, as the below example.
+If you are using [Gradle]() as your dependency manager, you can simply add [Ocypode's repository](https://github.com/jairobjunior/Ocypode/raw/dev/repo) and its dependency in your `build.gradle` file, as the example below.
 
 ```groovy
 buildscript {
@@ -43,6 +42,8 @@ Be aware of the latest version.
 ## Usage
 
 On the [Wiki pages](https://github.com/jairobjunior/Ocypode/wiki/_pages) you can get more code examples.
+
+## Dependencies
 
 ## Credits
 
