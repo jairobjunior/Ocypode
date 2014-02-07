@@ -5,6 +5,8 @@ import android.app.Service;
 import android.content.Intent;
 import android.content.ServiceConnection;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 
 import com.ocypode.activity.IResultCallbackActivity;
 import com.ocypode.component.delegate.IStartActivityDelegate;
@@ -96,6 +98,11 @@ abstract public class AbstractRoboFragmentActivity extends RoboFragmentActivity 
 	@Override
 	public void stopService(Class<?> cl) {
 		mStartActivityDelegate.stopService(cl);
+	}
+	
+	protected void addFragment(int fragmentId, Fragment fragment) {
+		FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();		
+		transaction.replace(fragmentId, fragment).commit();
 	}
 	
 	@Override

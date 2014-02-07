@@ -6,7 +6,7 @@ It is an open source project with a collection of libraries for iOS platform, wr
 
 ### From Gradle
 
-If you are using [Gradle]() as your dependency manager, you can simply add [Ocypode's repository](https://github.com/jairobjunior/Ocypode/raw/dev/repo) and its dependency in your `build.gradle` file, as the example below.
+If you are using [Gradle](http://www.gradle.org/) as your dependency manager, you can simply add [Ocypode's repository](https://github.com/jairobjunior/Ocypode/raw/dev/repo) and its dependency in your `build.gradle` file, as the example below.
 
 ```groovy
 buildscript {
