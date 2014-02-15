@@ -1,16 +1,16 @@
 package com.ocypode.component.view.dialog;
 
-import android.app.Activity;
 import android.app.AlertDialog;
+import android.content.Context;
 
 import com.ocypode.R;
 
 public class AlertDialogBuilder {
 
-	private final Activity mActivity;
+	private final Context mContext;
 
-	public AlertDialogBuilder(Activity activity) {
-		mActivity = activity;		
+	public AlertDialogBuilder(Context context) {
+		mContext = context;		
 	}
 	
 	public void showAlertDialog(String title, String message) {
@@ -22,19 +22,19 @@ public class AlertDialogBuilder {
 	}
 
 	public void showSuccessMessage(String message) {
-		createAlertDialog(mActivity.getString(R.string.success), message).show();
+		createAlertDialog(mContext.getString(R.string.success), message).show();
 	}
 	
 	public void showErrorMessage(String message) {
-		createAlertDialog(mActivity.getString(R.string.error), message).show();
+		createAlertDialog(mContext.getString(R.string.error), message).show();
 	}
 	
 	public void showErrorMessage(int messageId) {
-		showErrorMessage(mActivity.getString(messageId));
+		showErrorMessage(mContext.getString(messageId));
 	}
 	
 	private AlertDialog createAlertDialog(String title, String message) {
-        AlertDialog.Builder builder = new AlertDialog.Builder(mActivity);
+        AlertDialog.Builder builder = new AlertDialog.Builder(mContext);
         builder.setMessage(message)
         		.setTitle(title)
         		.setPositiveButton(R.string.ok, null);
@@ -43,7 +43,7 @@ public class AlertDialogBuilder {
 	}
 	
 	private AlertDialog createAlertDialog(int title, int message) {
-		AlertDialog.Builder builder = new AlertDialog.Builder(mActivity);
+		AlertDialog.Builder builder = new AlertDialog.Builder(mContext);
         builder.setMessage(message)
         		.setTitle(title)
         		.setPositiveButton(R.string.ok, null);
