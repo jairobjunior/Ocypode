@@ -23,6 +23,26 @@ abstract public class AbstractRoboActivity extends RoboActivity implements IStar
 	}	
 	
 	@Override
+	public void pushActivity(Class<?> screen) {
+		mStartActivityDelegate.pushActivity(screen);
+	}
+	
+	@Override
+	public void pushActivity(Class<?> screen, Bundle extras) {
+		mStartActivityDelegate.pushActivity(screen, extras);
+	}
+	
+	@Override
+	public void popActivity(Class<?> screen) {
+		mStartActivityDelegate.popActivity(screen);
+	}
+	
+	@Override
+	public void popActivity(Class<?> screen, Bundle extras) {
+		mStartActivityDelegate.popActivity(screen, extras);
+	}
+	
+	@Override
 	public void goToActivity(Class<?> screen) {
 		mStartActivityDelegate.goToActivity(screen);
 	}	

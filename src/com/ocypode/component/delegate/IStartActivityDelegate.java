@@ -14,7 +14,15 @@ import com.ocypode.activity.IResultCallbackActivity;
 public interface IStartActivityDelegate {
 
 	void goToActivity(Class<?> screen);
-
+	
+	void pushActivity(Class<?> screen);
+	
+	void pushActivity(Class<?> screen, Bundle extras);
+	
+	void popActivity(Class<?> screen);
+	
+	void popActivity(Class<?> screen, Bundle extras);
+	
 	void goToActivityWithNoAnimation(Class<?> screen);
 	
 	void goToActivityWithAnimation(Class<?> screen, int enterAnim, int exitAnim);

@@ -11,6 +11,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.util.SparseArray;
 
+import com.ocypode.R;
 import com.ocypode.activity.IResultCallbackActivity;
 import com.ocypode.component.delegate.adaptor.IStartActivityAdaptor;
 import com.ocypode.utility.Logcat;
@@ -150,6 +151,26 @@ public class StartActivityDelegate implements IStartActivityDelegate {
 			mStartActivityAdaptor.bindService(new Intent(mStartActivityAdaptor.getContext(), serviceClass), serviceConnection,
 					Context.BIND_AUTO_CREATE);
 		}
+	}
+
+	@Override
+	public void pushActivity(Class<?> screen) {
+		goToActivityWithAnimation(screen, R.anim.slide_left_enter, R.anim.slide_left_exit);
+	}
+
+	@Override
+	public void pushActivity(Class<?> screen, Bundle extras) {
+		goToActivityWithAnimation(screen, extras, R.anim.slide_left_enter, R.anim.slide_left_exit);
+	}
+
+	@Override
+	public void popActivity(Class<?> screen) {
+		goToActivityWithAnimation(screen, R.anim.slide_right_enter, R.anim.slide_right_exit);
+	}
+
+	@Override
+	public void popActivity(Class<?> screen, Bundle extras) {
+		goToActivityWithAnimation(screen, extras, R.anim.slide_right_enter, R.anim.slide_right_exit);
 	}
 
 }
