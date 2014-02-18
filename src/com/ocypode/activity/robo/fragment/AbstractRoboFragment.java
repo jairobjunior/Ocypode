@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 
+import com.ocypode.R;
 import com.ocypode.activity.IResultCallbackActivity;
 import com.ocypode.component.delegate.IStartActivityDelegate;
 import com.ocypode.component.delegate.StartActivityDelegate;
@@ -23,6 +24,14 @@ abstract public class AbstractRoboFragment extends RoboFragment implements IStar
 
 		mStartActivityDelegate = new StartActivityDelegate(new StartFragmentAdaptor(this));
 	}	
+	
+	public void pushActivity(Class<?> screen) {
+		goToActivityWithAnimation(screen, R.anim.slide_left_enter, R.anim.slide_left_exit);
+	}
+	
+	public void pushActivity(Class<?> screen, Bundle extras) {
+		goToActivityWithAnimation(screen, extras, R.anim.slide_left_enter, R.anim.slide_left_exit);
+	}
 	
 	@Override
 	public void goToActivity(Class<?> screen) {
