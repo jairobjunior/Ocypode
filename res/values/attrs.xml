@@ -5,4 +5,9 @@
         <attr name="typefaceTextView" format="string" />
     </declare-styleable>
 
+    <declare-styleable name="OCLisView">
+        <attr name="layout_header_embedded" format="string" />
+        <attr name="layout_footer_embedded" format="string" />
+    </declare-styleable>
+    
 </resources>
