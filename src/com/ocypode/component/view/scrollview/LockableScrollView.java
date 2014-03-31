@@ -9,6 +9,7 @@ import android.widget.ScrollView;
 public class LockableScrollView extends ScrollView implements OnPageChangeListener{
 	private boolean isLocked = false;
 	private boolean mScrollInit = false;
+	private ScrollViewListener scrollViewListener = null;
 	
 	public LockableScrollView(Context context, AttributeSet attrs) {
 		super(context, attrs);
@@ -52,5 +53,21 @@ public class LockableScrollView extends ScrollView implements OnPageChangeListen
 			mScrollInit = false;
 			setLock(false);
 		}
+	}
+	
+	public void setScrollViewListener(ScrollViewListener scrollViewListener) {
+        this.scrollViewListener = scrollViewListener;
+    }
+	
+	@Override
+    protected void onScrollChanged(int l, int t, int oldl, int oldt) {
+        super.onScrollChanged(l, t, oldl, oldt);
+        if (scrollViewListener != null) {
+            scrollViewListener.onScrollChanged(this, l, t, oldl, oldt);
+        }
+    }
+	
+	public interface ScrollViewListener {
+	    void onScrollChanged(LockableScrollView scrollView,  int x, int y, int oldx, int oldy);
 	}
 }
