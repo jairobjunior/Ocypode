@@ -125,6 +125,12 @@ abstract public class AbstractRoboFragmentActivity extends RoboFragmentActivity 
 		transaction.replace(fragmentId, fragment).commit();
 	}
 	
+	protected void addFragment(int fragmentId, Fragment fragment, String tag) {
+		FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+	    ft.replace(fragmentId, fragment, tag);
+	    ft.commit();
+	}
+	
 	@Override
 	public void bindService(Service service, Class<?> serviceClass,
 			ServiceConnection serviceConnection) {

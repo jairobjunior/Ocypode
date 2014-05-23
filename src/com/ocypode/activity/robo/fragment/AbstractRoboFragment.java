@@ -92,6 +92,12 @@ abstract public class AbstractRoboFragment extends RoboFragment implements IStar
 		transaction.replace(fragmentId, fragment).commit();
 	}
 	
+	protected void addFragment(int fragmentId, Fragment fragment, String tag) {
+		FragmentTransaction ft = getChildFragmentManager().beginTransaction();
+	    ft.replace(fragmentId, fragment, tag);
+	    ft.commit();
+	}
+	
 	@Override
 	public void openBrowser(String url) {
 		mStartActivityDelegate.openBrowser(url);
