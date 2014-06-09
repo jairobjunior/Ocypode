@@ -88,12 +88,12 @@ abstract public class AbstractRoboFragment extends RoboFragment implements IStar
 	}
 	
 	protected void addFragment(int fragmentId, Fragment fragment) {
-		FragmentTransaction transaction = getChildFragmentManager().beginTransaction();		
+		FragmentTransaction transaction = getFragmentManager().beginTransaction();		
 		transaction.replace(fragmentId, fragment).commit();
 	}
 	
 	protected void addFragment(int fragmentId, Fragment fragment, String tag) {
-		FragmentTransaction ft = getChildFragmentManager().beginTransaction();
+		FragmentTransaction ft = getFragmentManager().beginTransaction();
 	    ft.replace(fragmentId, fragment, tag);
 	    ft.commit();
 	}
