@@ -6,7 +6,7 @@ package com.ocypode.utility;
  */
 public class Logcat {
 	
-	public static final boolean LOG_ENABLED = true;
+	public static boolean LOG_ENABLED = true;
 	private static String TAG = "Logcat";
 
 	public static void d(String msg) {
