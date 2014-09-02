@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- From: file:/Users/rodrigo/Copy/Projetos/Android/Ocypode/res/values/attrs.xml -->
+    <eat-comment />
+
+    <declare-styleable name="OCLisView">
+        <attr name="layout_header_embedded" format="string" />
+        <attr name="layout_footer_embedded" format="string" />
+    </declare-styleable>
+    <declare-styleable name="TypefacedTextView">
+        <attr name="typefaceTextView" format="string" />
+    </declare-styleable>
+    <!-- From: file:/Users/rodrigo/Copy/Projetos/Android/Ocypode/res/values/strings.xml -->
+    <eat-comment />
+
+    <string name="am">AM</string>
+    <string name="app_name">AndroidUtilities</string>
+    <string name="cancel">Cancel</string>
+    <string name="error">Error</string>
+    <string name="loading">Loading…</string>
+    <string name="ok">Ok</string>
+    <string name="pm">PM</string>
+    <string name="success">Success</string>
+    <!-- From: file:/Users/rodrigo/Copy/Projetos/Android/Ocypode/res/values/styles.xml -->
+    <eat-comment />
+
+    <style name="AppBaseTheme" parent="android:Theme.Light">
+        <!--
+            Theme customizations available in newer API levels can go in
+            res/values-vXX/styles.xml, while customizations related to
+            backward-compatibility can go here.
+        -->
+    </style>
+
+    <style name="AppTheme" parent="AppBaseTheme">
+        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+    </style>
+
+</resources>
