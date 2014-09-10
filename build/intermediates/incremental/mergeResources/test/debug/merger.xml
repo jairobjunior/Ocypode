@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger version="2" >
+
+    <dataSet config="debug" >
+        <source path="/Users/rodrigo/Copy/Projetos/Android/Ocypode/build/intermediates/bundles/debug/res" >
+            <file
+                name="fade_in_enter"
+                path="/Users/rodrigo/Copy/Projetos/Android/Ocypode/build/intermediates/bundles/debug/res/anim/fade_in_enter.xml"
+                qualifiers=""
+                type="anim" />
+            <file
+                name="fade_in_short_time_enter"
+                path="/Users/rodrigo/Copy/Projetos/Android/Ocypode/build/intermediates/bundles/debug/res/anim/fade_in_short_time_enter.xml"
+                qualifiers=""
+                type="anim" />
+            <file
+                name="fade_out_exit"
+                path="/Users/rodrigo/Copy/Projetos/Android/Ocypode/build/intermediates/bundles/debug/res/anim/fade_out_exit.xml"
+                qualifiers=""
+                type="anim" />
+            <file
+                name="fade_out_short_time_exit"
+                path="/Users/rodrigo/Copy/Projetos/Android/Ocypode/build/intermediates/bundles/debug/res/anim/fade_out_short_time_exit.xml"
+                qualifiers=""
+                type="anim" />
+            <file
+                name="hold"
+                path="/Users/rodrigo/Copy/Projetos/Android/Ocypode/build/intermediates/bundles/debug/res/anim/hold.xml"
+                qualifiers=""
+                type="anim" />
+            <file
+                name="rotate_in_enter"
+                path="/Users/rodrigo/Copy/Projetos/Android/Ocypode/build/intermediates/bundles/debug/res/anim/rotate_in_enter.xml"
+                qualifiers=""
+                type="anim" />
+            <file
+                name="slide_down"
+                path="/Users/rodrigo/Copy/Projetos/Android/Ocypode/build/intermediates/bundles/debug/res/anim/slide_down.xml"
+                qualifiers=""
+                type="anim" />
+            <file
+                name="slide_down_enter"
+                path="/Users/rodrigo/Copy/Projetos/Android/Ocypode/build/intermediates/bundles/debug/res/anim/slide_down_enter.xml"
+                qualifiers=""
+                type="anim" />
+            <file
+                name="slide_down_exit"
+                path="/Users/rodrigo/Copy/Projetos/Android/Ocypode/build/intermediates/bundles/debug/res/anim/slide_down_exit.xml"
+                qualifiers=""
+                type="anim" />
+            <file
+                name="slide_down_form_signup"
+                path="/Users/rodrigo/Copy/Projetos/Android/Ocypode/build/intermediates/bundles/debug/res/anim/slide_down_form_signup.xml"
+                qualifiers=""
+                type="anim" />
+            <file
+                name="slide_left_enter"
+                path="/Users/rodrigo/Copy/Projetos/Android/Ocypode/build/intermediates/bundles/debug/res/anim/slide_left_enter.xml"
+                qualifiers=""
+                type="anim" />
+            <file
+                name="slide_left_exit"
+                path="/Users/rodrigo/Copy/Projetos/Android/Ocypode/build/intermediates/bundles/debug/res/anim/slide_left_exit.xml"
+                qualifiers=""
+                type="anim" />
+            <file
+                name="slide_right_enter"
+                path="/Users/rodrigo/Copy/Projetos/Android/Ocypode/build/intermediates/bundles/debug/res/anim/slide_right_enter.xml"
+                qualifiers=""
+                type="anim" />
+            <file
+                name="slide_right_exit"
+                path="/Users/rodrigo/Copy/Projetos/Android/Ocypode/build/intermediates/bundles/debug/res/anim/slide_right_exit.xml"
+                qualifiers=""
+                type="anim" />
+            <file
+                name="slide_up"
+                path="/Users/rodrigo/Copy/Projetos/Android/Ocypode/build/intermediates/bundles/debug/res/anim/slide_up.xml"
+                qualifiers=""
+                type="anim" />
+            <file
+                name="slide_up_enter"
+                path="/Users/rodrigo/Copy/Projetos/Android/Ocypode/build/intermediates/bundles/debug/res/anim/slide_up_enter.xml"
+                qualifiers=""
+                type="anim" />
+            <file
+                name="slide_up_exit"
+                path="/Users/rodrigo/Copy/Projetos/Android/Ocypode/build/intermediates/bundles/debug/res/anim/slide_up_exit.xml"
+                qualifiers=""
+                type="anim" />
+            <file
+                name="zoom_in_enter"
+                path="/Users/rodrigo/Copy/Projetos/Android/Ocypode/build/intermediates/bundles/debug/res/anim/zoom_in_enter.xml"
+                qualifiers=""
+                type="anim" />
+            <file
+                name="zoom_out_exit"
+                path="/Users/rodrigo/Copy/Projetos/Android/Ocypode/build/intermediates/bundles/debug/res/anim/zoom_out_exit.xml"
+                qualifiers=""
+                type="anim" />
+            <file
+                name="ic_launcher"
+                path="/Users/rodrigo/Copy/Projetos/Android/Ocypode/build/intermediates/bundles/debug/res/drawable-hdpi-v4/ic_launcher.png"
+                qualifiers="hdpi-v4"
+                type="drawable" />
+            <file
+                name="ic_launcher"
+                path="/Users/rodrigo/Copy/Projetos/Android/Ocypode/build/intermediates/bundles/debug/res/drawable-mdpi-v4/ic_launcher.png"
+                qualifiers="mdpi-v4"
+                type="drawable" />
+            <file
+                name="ic_launcher"
+                path="/Users/rodrigo/Copy/Projetos/Android/Ocypode/build/intermediates/bundles/debug/res/drawable-xhdpi-v4/ic_launcher.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
+                name="title_description_list_view"
+                path="/Users/rodrigo/Copy/Projetos/Android/Ocypode/build/intermediates/bundles/debug/res/layout/title_description_list_view.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                path="/Users/rodrigo/Copy/Projetos/Android/Ocypode/build/intermediates/bundles/debug/res/values/values.xml"
+                qualifiers="" >
+                <declare-styleable name="OCLisView" >
+                    <attr
+                        name="layout_header_embedded"
+                        format="string" />
+                    <attr
+                        name="layout_footer_embedded"
+                        format="string" />
+                </declare-styleable>
+
+                <string name="loading" >Loading…
+                </string>
+                <string name="success" >Success
+                </string>
+                <string name="cancel" >Cancel
+                </string>
+                <string name="pm" >PM
+                </string>
+                <string name="ok" >Ok
+                </string>
+
+                <declare-styleable name="TypefacedTextView" >
+                    <attr
+                        name="typefaceTextView"
+                        format="string" />
+                </declare-styleable>
+
+                <style
+                    name="AppBaseTheme"
+                    parent="android:Theme.Light" >
+
+                    <!--
+            Theme customizations available in newer API levels can go in
+            res/values-vXX/styles.xml, while customizations related to
+            backward-compatibility can go here.
+                    -->
+                </style>
+
+                <string name="app_name" >AndroidUtilities
+                </string>
+                <string name="am" >AM
+                </string>
+                <string name="error" >Error
+                </string>
+
+                <style
+                    name="AppTheme"
+                    parent="AppBaseTheme" >
+
+                    <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+                </style>
+            </file>
+            <file
+                path="/Users/rodrigo/Copy/Projetos/Android/Ocypode/build/intermediates/bundles/debug/res/values-v11/values.xml"
+                qualifiers="v11" >
+
+                <style
+                    name="AppBaseTheme"
+                    parent="android:Theme.Holo.Light" >
+
+                    <!-- API 11 theme customizations can go here. -->
+                </style>
+            </file>
+            <file
+                path="/Users/rodrigo/Copy/Projetos/Android/Ocypode/build/intermediates/bundles/debug/res/values-v14/values.xml"
+                qualifiers="v14" >
+
+                <style
+                    name="AppBaseTheme"
+                    parent="android:Theme.Holo.Light.DarkActionBar" >
+
+                    <!-- API 14 theme customizations can go here. -->
+                </style>
+            </file>
+        </source>
+    </dataSet>
+    <dataSet config="main" >
+        <source path="/Users/rodrigo/Copy/Projetos/Android/Ocypode/src/androidTest/res" />
+        <source path="/Users/rodrigo/Copy/Projetos/Android/Ocypode/build/generated/res/rs/test/debug" />
+        <source path="/Users/rodrigo/Copy/Projetos/Android/Ocypode/build/generated/res/generated/test/debug" />
+    </dataSet>
+
+</merger>
